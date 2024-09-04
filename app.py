@@ -7,12 +7,12 @@ import os
 import io
 from PIL import Image 
 import pdf2image
-import google.generativeai as genai
+from google.generativeai import GenerativeModel
 
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model_name = f"models/{'gemini-1.5-flash'}"
-model = genai.get_model(model_name)
+model = GenerativeModel.get_model(model_name)
 
 def get_gemini_response(input,pdf_cotent,prompt):
     response=model.generate_content([input,pdf_content[0],prompt])
