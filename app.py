@@ -11,11 +11,7 @@ import google.generativeai as genai
 
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-if is_tuned_model:  # Check if it's a tuned model
-    model_name = f"tunedModels/{'gemini-1.5-flash'}"
-else:
-    model_name = f"models/{'gemini-1.5-flash'}"
-
+model_name = f"models/{'gemini-1.5-flash'}"
 model = genai.get_model(model_name)
 
 def get_gemini_response(input,pdf_cotent,prompt):
