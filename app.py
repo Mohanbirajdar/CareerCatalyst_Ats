@@ -8,9 +8,15 @@ import io
 from PIL import Image 
 import pdf2image
 import google.generativeai as genai
-model = genai.get_model('gemini-1.5-flash')
+
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+if is_tuned_model:  # Check if it's a tuned model
+    model_name = f"tunedModels/{'gemini-1.5-flash'}"
+else:
+    model_name = f"models/{'gemini-1.5-flash'}"
+
+model = genai.get_model(model_name)
 
 def get_gemini_response(input,pdf_cotent,prompt):
     model=genai.GenerativeModel('gemini-pro-vision')
