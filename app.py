@@ -8,6 +8,7 @@ import io
 from PIL import Image 
 import pdf2image
 import google.generativeai as genai
+model = genai.get_model('gemini-1.5-flash')
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
