@@ -10,7 +10,7 @@ import pdf2image
 from google.generativeai import GenerativeModel
 
 
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+GenerativeModel.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model_name = f"models/{'gemini-1.5-flash'}"
 model = GenerativeModel.get_model(model_name)
 
