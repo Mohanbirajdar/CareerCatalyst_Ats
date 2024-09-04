@@ -16,7 +16,7 @@ model_name = f"models/{'gemini-1.5-flash'}"
 model = genai.get_model(model_name)
 
 def get_gemini_response(input,pdf_cotent,prompt):
-    response=model.generate_content([input,pdf_content[0],prompt])
+    response=model.generate([input,pdf_content[0],prompt])
     return response.text
 
 def input_pdf_setup(uploaded_file):
