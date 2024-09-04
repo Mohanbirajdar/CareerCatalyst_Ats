@@ -7,6 +7,7 @@ import os
 import io
 from PIL import Image 
 import pdf2image
+from google.generativeai import GenerativeModel
 import google.generativeai as genai
 
 
