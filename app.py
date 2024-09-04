@@ -9,7 +9,7 @@ from PIL import Image
 import pdf2image
 import google.generativeai as genai
 
-genai.configure(api_key=os.getenv("AIzaSyDY4e6X-UIooB47rGkWdBS-Un_8ul-CcVc"))
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 def get_gemini_response(input,pdf_cotent,prompt):
     model=genai.GenerativeModel('gemini-pro-vision')
@@ -40,8 +40,8 @@ def input_pdf_setup(uploaded_file):
 
 ## Streamlit App
 
-st.set_page_config(page_title="ATS Resume EXpert")
-st.header("ATS Tracking System")
+st.set_page_config(page_title=" CareerCatalyst's ATS Resume EXpert")
+st.header("CareerCatalyst's ATS Tracking System")
 input_text=st.text_area("Job Description: ",key="input")
 uploaded_file=st.file_uploader("Upload your resume(PDF)...",type=["pdf"])
 
